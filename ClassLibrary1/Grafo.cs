@@ -76,7 +76,7 @@ namespace ClassLibrary1
         actual = actual.VerticeSig;
     }
 
-    // Guardar los nombres de los vértices en un arreglo
+    
     string[] nombres = new string[n];
     actual = inicioLista;
     for (int i = 0; i < n; i++)
@@ -89,7 +89,7 @@ namespace ClassLibrary1
     Console.Write("\t");
     Console.ResetColor();
 
-    // 🔹 Encabezado con los nombres de los vértices
+   
     for (int j = 0; j < n; j++)
     {
         Console.ForegroundColor = ConsoleColor.Red;
@@ -98,7 +98,7 @@ namespace ClassLibrary1
     }
     Console.WriteLine();
 
-    // 🔹 Filas de la matriz
+  
     for (int i = 0; i < n; i++)
     {
         Console.ForegroundColor = ConsoleColor.Red;
