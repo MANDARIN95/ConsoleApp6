@@ -68,31 +68,48 @@ namespace ClassLibrary1
 
         public void MostrarMatriz()
         {
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write("\t");
+            int n = 0;
+    Vertice actual = inicioLista;
+    while (actual != null)
+    {
+        n++;
+        actual = actual.VerticeSig;
+    }
 
-            // Encabezado
-            for (int j = 0; j < ma.GetLength(1); j++)
-            {
-                Console.Write((j + 1) + "\t");
-            }
+    // Guardar los nombres de los vértices en un arreglo
+    string[] nombres = new string[n];
+    actual = inicioLista;
+    for (int i = 0; i < n; i++)
+    {
+        nombres[i] = actual.Dato;
+        actual = actual.VerticeSig;
+    }
 
-            Console.WriteLine();
-            Console.ResetColor();
+    Console.ForegroundColor = ConsoleColor.Red;
+    Console.Write("\t");
+    Console.ResetColor();
 
-            // Cuerpo de la matriz
-            for (int i = 0; i < ma.GetLength(0); i++)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.Write((i + 1) + "\t");
-                Console.ResetColor();
+    // 🔹 Encabezado con los nombres de los vértices
+    for (int j = 0; j < n; j++)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.Write(nombres[j] + "\t");
+        Console.ResetColor();
+    }
+    Console.WriteLine();
 
-                for (int j = 0; j < ma.GetLength(1); j++)
-                {
-                    Console.Write(ma[i, j] + "\t");
-                }
+    // 🔹 Filas de la matriz
+    for (int i = 0; i < n; i++)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.Write(nombres[i] + "\t");
+        Console.ResetColor();
 
-                Console.WriteLine(); Console.ResetColor();
+        for (int j = 0; j < n; j++)
+        {
+            Console.Write(ma[i, j] + "\t");
+        }
+        Console.WriteLine();
 
             }
         }
